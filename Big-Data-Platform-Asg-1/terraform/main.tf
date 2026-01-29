@@ -1,6 +1,6 @@
 provider "google" {
   project     = "mybigdataproject-485818"
-  credentials = file("/Users/muhammadsabeehwaqas/myKeys/creds.json")
+  credentials = file("creds.json")
   region      = "europe-north1"
   zone        = "europe-north1-a"
 }
