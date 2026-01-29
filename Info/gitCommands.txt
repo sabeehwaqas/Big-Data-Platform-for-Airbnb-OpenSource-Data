@@ -1,5 +1,5 @@
-cd into repo folder
-git add.
+cd /Users/muhammadsabeehwaqas/Documents/MyBigDataProj
+git add .
 git commit -m "Add new text file"
 git push origin main
 
