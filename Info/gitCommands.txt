@@ -1,0 +1,5 @@
+cd into repo folder
+git add.
+git commit -m "Add new text file"
+git push origin main
+

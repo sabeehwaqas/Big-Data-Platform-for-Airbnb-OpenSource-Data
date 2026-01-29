@@ -1,0 +1,46 @@
+-- will use the cassandra as the db as it supports the partitioning  and clsuter 
+-- my plan is to use to setup the cassacdra cultoer on my local machine like 3 docker container each with one cassacne with docker compose and bind it into a cluster  , no cloud as its might get expensive. Scale using docker (no terraform needed)
+-- i will beusing nifi for data ingestion
+
+PART 1 Q1
+____________________________________________
+--Application Domain:
+
+-Domain: Hospitality/Marketplace (Airbnb) — Real-world big data scenario.
+-Why: High volume of transactional and user-generated data (properties, bookings, reviews).
+
+--Generic Types of Data:
+--Structured Data: CSV files (e.g., property listings, bookings) and json files
+
+
+--Technologies Used for mysimbdp-coredms:
+
+-Database: Cassandra — Highly scalable, optimized for write-heavy workloads.
+
+Scalability: Horizontal scaling for growing data.
+Write-Optimized: Handles high write throughput.
+Availability: Ensures high availability even with node failures.
+Both for structure and unstracuutre data
+-Why Cassandra:
+
+--Tenant Data Sources:
+
+-Data Source: CSV files (city/month-wise data) and json
+-Ingestion Process: Data uploaded to a landing server for batch processing.
+-Data Access: Batch data ingestion via APIs or direct file uploads.
+
+--Big Data Workloads:
+
+-Large-Volume Data: Handling large datasets across multiple cities/months.
+-Batch Processing: Monthly data uploads processed in batches.
+-Scalability: Designed to scale with increasing tenants and data.
+
+--Justification for the Approach:
+
+-Domain: Ideal for real-world big data challenges (Airbnb data).
+-Cassandra: Best choice for scalability and performance with large datasets.
+-Landing Server: Simulates real-world batch data ingestion from tenants.
+-Big Data Workloads: Handles high-volume data, real-time updates, and batch processing effectively.
+
+____________________________________________
+

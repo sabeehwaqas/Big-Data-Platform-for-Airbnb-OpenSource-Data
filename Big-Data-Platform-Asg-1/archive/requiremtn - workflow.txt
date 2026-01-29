@@ -1,0 +1,4 @@
+Instal docker
+Open docker desktop
+Creat the docker-coupe file
+Run docker-compose up -d
