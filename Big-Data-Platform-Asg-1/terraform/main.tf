@@ -5,6 +5,75 @@ provider "google" {
   zone        = "europe-north1-a"
 }
 
+resource "google_project_service" "iam_api" {
+  service            = "iam.googleapis.com"
+  disable_on_destroy = false
+}
+resource "google_project_service" "cloudresourcemanager_api" {
+  service            = "cloudresourcemanager.googleapis.com"
+  disable_on_destroy = false
+}
+
+#GCP storage
+
+variable "bucket_suffix" {
+  description = "Suffix to make the bucket name globally unique"
+  type        = string
+  default     = "485818"
+}
+
+resource "google_storage_bucket" "landing_bucket" {
+  name     = "mysimbdp-landing-${var.bucket_suffix}"
+  location = "EU"
+
+  uniform_bucket_level_access = true
+  force_destroy               = true
+}
+
+#creating the needed folder in gcp storage
+resource "google_storage_bucket_object" "landing_dir" {
+  bucket  = google_storage_bucket.landing_bucket.name
+  name    = "landing/"
+  content = " "
+}
+
+resource "google_storage_bucket_object" "landing_raw_dir" {
+  bucket  = google_storage_bucket.landing_bucket.name
+  name    = "landing/raw/"
+  content = " "
+}
+
+resource "google_storage_bucket_object" "landing_processed_dir" {
+  bucket  = google_storage_bucket.landing_bucket.name
+  name    = "landing/processed/"
+  content = " "
+}
+
+resource "google_storage_bucket_object" "landing_failed_dir" {
+  bucket  = google_storage_bucket.landing_bucket.name
+  name    = "landing/failed/"
+  content = " "
+}
+
+#admin user to access the storage
+resource "google_storage_bucket_iam_member" "admin_full_access" {
+  bucket = google_storage_bucket.landing_bucket.name
+  role   = "roles/storage.admin"
+  member = "user:sabeeh.waqas@aalto.fi"
+}
+
+#nifi SA for storage access
+resource "google_service_account" "nifi_sa" {
+  account_id   = "nifi-landing-sa"
+  display_name = "NiFi access to landing prefixes"
+
+  depends_on = [
+    google_project_service.iam_api,
+    google_project_service.cloudresourcemanager_api
+  ]
+}
+
+
 # Number of Cassandra nodes
 variable "instance_count" {
   default = 3
@@ -13,7 +82,7 @@ variable "instance_count" {
 # VPC Network
 resource "google_compute_network" "default" {
   name                    = "cassandra-network"
-  auto_create_subnetworks  = false  # We define subnetwork manually
+  auto_create_subnetworks = false
 }
 
 # Subnetwork for the VMs
@@ -24,7 +93,9 @@ resource "google_compute_subnetwork" "default" {
   ip_cidr_range = "10.0.0.0/24"
 }
 
-# Internal IPs for each Cassandra node
+# -------------------------
+# Static INTERNAL IPs
+# -------------------------
 resource "google_compute_address" "cassandra_internal" {
   count        = var.instance_count
   name         = "cassandra-internal-${count.index + 1}"
@@ -34,32 +105,101 @@ resource "google_compute_address" "cassandra_internal" {
   address      = "10.0.0.${10 + count.index}"
 }
 
-# Firewall rule to allow SSH, CQL, and intra-cluster communication
-resource "google_compute_firewall" "allow_ssh_cql" {
-  name    = "allow-ssh-cql"
+resource "google_compute_address" "nifi_internal" {
+  name         = "nifi-internal"
+  region       = "europe-north1"
+  subnetwork   = google_compute_subnetwork.default.id
+  address_type = "INTERNAL"
+  address      = "10.0.0.50"
+}
+
+# Static PUBLIC IP for NiFi Web UI
+resource "google_compute_address" "nifi_public" {
+  name   = "nifi-public"
+  region = "europe-north1"
+}
+
+# -------------------------
+# FIREWALLS
+# Goals:
+# - Cassandra: SSH from internet OK, CQL NOT exposed publicly
+# - NiFi: Web UI exposed publicly
+# - NiFi -> Cassandra: allow CQL (9042) privately
+# -------------------------
+
+# SSH to Cassandra (public)
+resource "google_compute_firewall" "allow_ssh_cassandra" {
+  name    = "allow-ssh-cassandra"
   network = google_compute_network.default.id
 
   allow {
     protocol = "tcp"
-    ports    = ["22", "9042"]  # SSH + CQL
+    ports    = ["22"]
   }
 
   source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["cassandra-node"]
 }
 
+# SSH to Nifi (public)
+resource "google_compute_firewall" "allow_ssh_nifi" {
+  name    = "allow-ssh-nifi"
+  network = google_compute_network.default.id
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["nifi-node"]
+}
+
+# Allow NiFi Web UI from the internet
+resource "google_compute_firewall" "allow_nifi_web" {
+  name    = "allow-nifi-web"
+  network = google_compute_network.default.id
+
+  allow {
+    protocol = "tcp"
+    ports    = ["8080", "8443"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["nifi-node"]
+}
+
+# Cassandra internode (only within subnet, only to cassandra nodes)
 resource "google_compute_firewall" "allow_cassandra_internode" {
   name    = "allow-cassandra-internode"
   network = google_compute_network.default.id
 
   allow {
     protocol = "tcp"
-    ports    = ["7000", "7001", "7199", "9160"]  # Internode communication
+    ports    = ["7000", "7001", "7199", "9160"]
   }
 
-  source_ranges = ["10.0.0.0/24"]  # Only allow traffic from the subnet
+  source_ranges = ["10.0.0.0/24"]
+  target_tags   = ["cassandra-node"]
 }
 
-# VM Instances for Cassandra Nodes
+# CQL access ONLY from NiFi to Cassandra (private)
+resource "google_compute_firewall" "allow_cql_from_nifi" {
+  name    = "allow-cql-from-nifi"
+  network = google_compute_network.default.id
+
+  allow {
+    protocol = "tcp"
+    ports    = ["9042"]
+  }
+
+  source_tags = ["nifi-node"]
+  target_tags = ["cassandra-node"]
+}
+
+# -------------------------
+# VM: Cassandra nodes
+# -------------------------
 resource "google_compute_instance" "cassandra" {
   count        = var.instance_count
   name         = "cassandra-node-${count.index + 1}"
@@ -69,42 +209,35 @@ resource "google_compute_instance" "cassandra" {
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-2204-lts"  # Use a stable Ubuntu image (adjust the version)
+      image = "ubuntu-2204-lts"
     }
   }
 
   network_interface {
     subnetwork = google_compute_subnetwork.default.id
     network_ip = google_compute_address.cassandra_internal[count.index].address
-    access_config {}  # Assign public IP if needed for SSH access
+
+    # Public IP so you can SSH
+    access_config {}
   }
 
   metadata_startup_script = <<-EOT
 #!/bin/bash
 set -euxo pipefail
 
-# Update and install Docker
-sudo apt-get update
-sudo apt-get install -y docker.io
+apt-get update
+apt-get install -y docker.io
+systemctl enable docker
+systemctl start docker
 
-# Enable and start Docker service
-sudo systemctl enable docker
-sudo systemctl start docker
+docker pull cassandra:4.0
 
-# Create the custom Docker network (if not already created)
-sudo docker network create cassandra-network || true
-
-# Pull the official Apache Cassandra Docker image
-sudo docker pull cassandra:4.0
-
-# Get the VM's internal IP
 NODE_IP="$(hostname -I | awk '{print $1}')"
-
-# Seed nodes are the internal IPs of the other VMs
 SEEDS="${join(",", google_compute_address.cassandra_internal[*].address)}"
 
-# Run Cassandra container using host network
-sudo docker run -d --name cassandra-node-${count.index + 1} --restart unless-stopped --network host \
+docker rm -f cassandra-node-${count.index + 1} || true
+
+docker run -d --name cassandra-node-${count.index + 1} --restart unless-stopped --network host \
   -e CASSANDRA_CLUSTER_NAME="CassandraCluster" \
   -e CASSANDRA_LISTEN_ADDRESS="$NODE_IP" \
   -e CASSANDRA_RPC_ADDRESS="0.0.0.0" \
@@ -112,17 +245,126 @@ sudo docker run -d --name cassandra-node-${count.index + 1} --restart unless-sto
   -e CASSANDRA_SEEDS="$SEEDS" \
   cassandra:4.0
 
-# Check if Cassandra container is running
-if ! sudo docker ps | grep cassandra; then
-  echo "Cassandra container failed to start. Exiting."
-  exit 1
-else
-  echo "Cassandra is running successfully in Docker."
-fi
+docker ps | grep -q cassandra-node-${count.index + 1}
+echo "Cassandra node ${count.index + 1} up on $${NODE_IP}"
   EOT
 }
 
-# Output to display the internal IPs of the created instances
-output "cassandra_instance_ips" {
+output "cassandra_instance_internal_ips" {
   value = [for instance in google_compute_instance.cassandra : instance.network_interface[0].network_ip]
+}
+
+output "cassandra_instance_public_ips" {
+  value = [for instance in google_compute_instance.cassandra : instance.network_interface[0].access_config[0].nat_ip]
+}
+
+# -------------------------
+# VM: NiFi node
+# -------------------------
+resource "google_compute_instance" "nifi" {
+  name                      = "nifi-node"
+  machine_type              = "e2-medium"
+  zone                      = "europe-north1-a"
+  tags                      = ["nifi-node"]
+  allow_stopping_for_update = true
+
+  boot_disk {
+    initialize_params {
+      image = "ubuntu-2204-lts"
+    }
+  }
+
+  network_interface {
+    subnetwork = google_compute_subnetwork.default.id
+    network_ip = google_compute_address.nifi_internal.address
+
+    # Static public IP for web UI
+    access_config {
+      nat_ip = google_compute_address.nifi_public.address
+    }
+  }
+
+  metadata_startup_script = <<-EOT
+#!/bin/bash
+set -euxo pipefail
+
+NIFI_IMAGE="apache/nifi:latest"
+NIFI_NAME="nifi"
+
+# Single-user creds (password must be 12+ chars)
+NIFI_USER="sabeeh"
+NIFI_PASS="sabeehsabeeh"
+
+apt-get update
+apt-get install -y docker.io
+systemctl enable docker
+systemctl start docker
+
+# Get this VM's PUBLIC IP from GCP metadata (reliable)
+PUBLIC_IP="$(curl -fsH "Metadata-Flavor: Google" \
+  "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip")"
+
+mkdir -p /opt/nifi/{db,flowfile_repo,content_repo,provenance_repo,state,logs}
+chmod -R 777 /opt/nifi
+
+docker pull "$${NIFI_IMAGE}"
+
+# Remove old container if present
+docker rm -f "$${NIFI_NAME}" || true
+
+# Run NiFi (HTTPS 8443)
+docker run -d --name "$${NIFI_NAME}" --restart unless-stopped \
+  -p 8443:8443 \
+  -e SINGLE_USER_CREDENTIALS_USERNAME="$${NIFI_USER}" \
+  -e SINGLE_USER_CREDENTIALS_PASSWORD="$${NIFI_PASS}" \
+  -e NIFI_WEB_HTTPS_HOST="0.0.0.0" \
+  -e NIFI_WEB_PROXY_HOST="$${PUBLIC_IP}:8443" \
+  -v /opt/nifi/db:/opt/nifi/nifi-current/database_repository \
+  -v /opt/nifi/flowfile_repo:/opt/nifi/nifi-current/flowfile_repository \
+  -v /opt/nifi/content_repo:/opt/nifi/nifi-current/content_repository \
+  -v /opt/nifi/provenance_repo:/opt/nifi/nifi-current/provenance_repository \
+  -v /opt/nifi/state:/opt/nifi/nifi-current/state \
+  -v /opt/nifi/logs:/opt/nifi/nifi-current/logs \
+  "$${NIFI_IMAGE}"
+
+# Quick check
+sleep 8
+docker ps | grep -q "$${NIFI_NAME}"
+echo "NiFi should be available at: https://$${PUBLIC_IP}:8443/nifi"
+EOT
+
+  service_account {
+    email  = google_service_account.nifi_sa.email
+    scopes = ["https://www.googleapis.com/auth/cloud-platform"]
+  }
+
+
+
+
+}
+# NiFi can access only landing/{raw,processed,failed}/
+resource "google_storage_bucket_iam_member" "nifi_landing_prefix_access" {
+  bucket = google_storage_bucket.landing_bucket.name
+  role   = "roles/storage.objectAdmin"
+  member = "serviceAccount:${google_service_account.nifi_sa.email}"
+
+  condition {
+    title       = "nifi-landing-prefixes"
+    description = "Allow NiFi only landing/raw, landing/processed, landing/failed"
+    expression  = "resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/raw/\") || resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/processed/\") || resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/failed/\")"
+  }
+}
+
+
+
+output "nifi_public_ip" {
+  value = google_compute_instance.nifi.network_interface[0].access_config[0].nat_ip
+}
+
+output "landing_bucket_name" {
+  value = google_storage_bucket.landing_bucket.name
+}
+
+output "nifi_service_account_email" {
+  value = google_service_account.nifi_sa.email
 }
