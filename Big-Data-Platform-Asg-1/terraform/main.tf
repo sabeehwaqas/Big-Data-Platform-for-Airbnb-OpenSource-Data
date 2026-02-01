@@ -9,13 +9,15 @@ resource "google_project_service" "iam_api" {
   service            = "iam.googleapis.com"
   disable_on_destroy = false
 }
+
 resource "google_project_service" "cloudresourcemanager_api" {
   service            = "cloudresourcemanager.googleapis.com"
   disable_on_destroy = false
 }
 
-#GCP storage
-
+# -------------------------
+# GCS landing bucket
+# -------------------------
 variable "bucket_suffix" {
   description = "Suffix to make the bucket name globally unique"
   type        = string
@@ -30,7 +32,6 @@ resource "google_storage_bucket" "landing_bucket" {
   force_destroy               = true
 }
 
-#creating the needed folder in gcp storage
 resource "google_storage_bucket_object" "landing_dir" {
   bucket  = google_storage_bucket.landing_bucket.name
   name    = "landing/"
@@ -55,14 +56,15 @@ resource "google_storage_bucket_object" "landing_failed_dir" {
   content = " "
 }
 
-#admin user to access the storage
 resource "google_storage_bucket_iam_member" "admin_full_access" {
   bucket = google_storage_bucket.landing_bucket.name
   role   = "roles/storage.admin"
   member = "user:sabeeh.waqas@aalto.fi"
 }
 
-#nifi SA for storage access
+# -------------------------
+# NiFi service account
+# -------------------------
 resource "google_service_account" "nifi_sa" {
   account_id   = "nifi-landing-sa"
   display_name = "NiFi access to landing prefixes"
@@ -73,19 +75,37 @@ resource "google_service_account" "nifi_sa" {
   ]
 }
 
+# NiFi can access only landing/{raw,processed,failed}/
+resource "google_storage_bucket_iam_member" "nifi_landing_prefix_access" {
+  bucket = google_storage_bucket.landing_bucket.name
+  role   = "roles/storage.objectAdmin"
+  member = "serviceAccount:${google_service_account.nifi_sa.email}"
 
-# Number of Cassandra nodes
+  condition {
+    title       = "nifi-landing-prefixes"
+    description = "Allow NiFi only landing/raw, landing/processed, landing/failed"
+    expression  = "resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/raw/\") || resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/processed/\") || resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/failed/\")"
+  }
+}
+# Allow NiFi service account to LIST objects in the bucket (required for ListGCSBucket)
+resource "google_storage_bucket_iam_member" "nifi_list_objects" {
+  bucket = google_storage_bucket.landing_bucket.name
+  role   = "roles/storage.legacyBucketReader"
+  member = "serviceAccount:${google_service_account.nifi_sa.email}"
+}
+
+# -------------------------
+# Network
+# -------------------------
 variable "instance_count" {
   default = 3
 }
 
-# VPC Network
 resource "google_compute_network" "default" {
   name                    = "cassandra-network"
   auto_create_subnetworks = false
 }
 
-# Subnetwork for the VMs
 resource "google_compute_subnetwork" "default" {
   name          = "cassandra-subnetwork"
   region        = "europe-north1"
@@ -113,21 +133,14 @@ resource "google_compute_address" "nifi_internal" {
   address      = "10.0.0.50"
 }
 
-# Static PUBLIC IP for NiFi Web UI
 resource "google_compute_address" "nifi_public" {
   name   = "nifi-public"
   region = "europe-north1"
 }
 
 # -------------------------
-# FIREWALLS
-# Goals:
-# - Cassandra: SSH from internet OK, CQL NOT exposed publicly
-# - NiFi: Web UI exposed publicly
-# - NiFi -> Cassandra: allow CQL (9042) privately
+# Firewalls
 # -------------------------
-
-# SSH to Cassandra (public)
 resource "google_compute_firewall" "allow_ssh_cassandra" {
   name    = "allow-ssh-cassandra"
   network = google_compute_network.default.id
@@ -141,7 +154,6 @@ resource "google_compute_firewall" "allow_ssh_cassandra" {
   target_tags   = ["cassandra-node"]
 }
 
-# SSH to Nifi (public)
 resource "google_compute_firewall" "allow_ssh_nifi" {
   name    = "allow-ssh-nifi"
   network = google_compute_network.default.id
@@ -155,7 +167,6 @@ resource "google_compute_firewall" "allow_ssh_nifi" {
   target_tags   = ["nifi-node"]
 }
 
-# Allow NiFi Web UI from the internet
 resource "google_compute_firewall" "allow_nifi_web" {
   name    = "allow-nifi-web"
   network = google_compute_network.default.id
@@ -169,7 +180,6 @@ resource "google_compute_firewall" "allow_nifi_web" {
   target_tags   = ["nifi-node"]
 }
 
-# Cassandra internode (only within subnet, only to cassandra nodes)
 resource "google_compute_firewall" "allow_cassandra_internode" {
   name    = "allow-cassandra-internode"
   network = google_compute_network.default.id
@@ -183,7 +193,6 @@ resource "google_compute_firewall" "allow_cassandra_internode" {
   target_tags   = ["cassandra-node"]
 }
 
-# CQL access ONLY from NiFi to Cassandra (private)
 resource "google_compute_firewall" "allow_cql_from_nifi" {
   name    = "allow-cql-from-nifi"
   network = google_compute_network.default.id
@@ -198,7 +207,7 @@ resource "google_compute_firewall" "allow_cql_from_nifi" {
 }
 
 # -------------------------
-# VM: Cassandra nodes
+# Cassandra VMs
 # -------------------------
 resource "google_compute_instance" "cassandra" {
   count        = var.instance_count
@@ -216,8 +225,6 @@ resource "google_compute_instance" "cassandra" {
   network_interface {
     subnetwork = google_compute_subnetwork.default.id
     network_ip = google_compute_address.cassandra_internal[count.index].address
-
-    # Public IP so you can SSH
     access_config {}
   }
 
@@ -232,22 +239,26 @@ systemctl start docker
 
 docker pull cassandra:4.0
 
-NODE_IP="$(hostname -I | awk '{print $1}')"
+# Use Terraform-known static internal IPs (no bash command substitution)
+NODE_IP="${google_compute_address.cassandra_internal[count.index].address}"
 SEEDS="${join(",", google_compute_address.cassandra_internal[*].address)}"
 
 docker rm -f cassandra-node-${count.index + 1} || true
 
 docker run -d --name cassandra-node-${count.index + 1} --restart unless-stopped --network host \
   -e CASSANDRA_CLUSTER_NAME="CassandraCluster" \
-  -e CASSANDRA_LISTEN_ADDRESS="$NODE_IP" \
+  -e CASSANDRA_LISTEN_ADDRESS="$${NODE_IP}" \
   -e CASSANDRA_RPC_ADDRESS="0.0.0.0" \
-  -e CASSANDRA_BROADCAST_RPC_ADDRESS="$NODE_IP" \
-  -e CASSANDRA_SEEDS="$SEEDS" \
+  -e CASSANDRA_BROADCAST_RPC_ADDRESS="$${NODE_IP}" \
+  -e CASSANDRA_SEEDS="$${SEEDS}" \
   cassandra:4.0
 
+sleep 5
 docker ps | grep -q cassandra-node-${count.index + 1}
 echo "Cassandra node ${count.index + 1} up on $${NODE_IP}"
-  EOT
+EOT
+
+
 }
 
 output "cassandra_instance_internal_ips" {
@@ -259,7 +270,7 @@ output "cassandra_instance_public_ips" {
 }
 
 # -------------------------
-# VM: NiFi node
+# NiFi VM
 # -------------------------
 resource "google_compute_instance" "nifi" {
   name                      = "nifi-node"
@@ -277,8 +288,6 @@ resource "google_compute_instance" "nifi" {
   network_interface {
     subnetwork = google_compute_subnetwork.default.id
     network_ip = google_compute_address.nifi_internal.address
-
-    # Static public IP for web UI
     access_config {
       nat_ip = google_compute_address.nifi_public.address
     }
@@ -288,37 +297,103 @@ resource "google_compute_instance" "nifi" {
 #!/bin/bash
 set -euxo pipefail
 
-NIFI_IMAGE="apache/nifi:latest"
+NIFI_IMAGE="apache/nifi:2.7.2"
 NIFI_NAME="nifi"
 
-# Single-user creds (password must be 12+ chars)
 NIFI_USER="sabeeh"
 NIFI_PASS="sabeehsabeeh"
 
 apt-get update
-apt-get install -y docker.io
+apt-get install -y docker.io curl
 systemctl enable docker
 systemctl start docker
 
-# Get this VM's PUBLIC IP from GCP metadata (reliable)
-PUBLIC_IP="$(curl -fsH "Metadata-Flavor: Google" \
-  "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip")"
+# Use Terraform-known static public IP (avoid metadata curl escaping issues)
+PUBLIC_IP="${google_compute_address.nifi_public.address}"
 
-mkdir -p /opt/nifi/{db,flowfile_repo,content_repo,provenance_repo,state,logs}
+mkdir -p /opt/nifi/{db,flowfile_repo,content_repo,provenance_repo,state,logs,jdbc}
 chmod -R 777 /opt/nifi
 
-docker pull "$${NIFI_IMAGE}"
+JDBC_DIR="/opt/nifi/jdbc"
+mkdir -p "$${JDBC_DIR}"
+chmod 755 "$${JDBC_DIR}"
 
-# Remove old container if present
+# -------------------------
+# Download JDBC + dependencies (idempotent)
+# -------------------------
+download() {
+  local url="$1"
+  local out="$2"
+  if [ ! -f "$${out}" ]; then
+    curl -fL "$${url}" -o "$${out}"
+  fi
+}
+
+# 1) Cassandra JDBC wrapper
+WRAP_VER="4.16.1"
+download "https://repo1.maven.org/maven2/com/ing/data/cassandra-jdbc-wrapper/$${WRAP_VER}/cassandra-jdbc-wrapper-$${WRAP_VER}.jar" \
+         "$${JDBC_DIR}/cassandra-jdbc-wrapper-$${WRAP_VER}.jar"
+
+# 2) Caffeine (required by wrapper)
+CAF_VER="2.9.3"
+download "https://repo1.maven.org/maven2/com/github/ben-manes/caffeine/caffeine/$${CAF_VER}/caffeine-$${CAF_VER}.jar" \
+         "$${JDBC_DIR}/caffeine-$${CAF_VER}.jar"
+
+# 3) DataStax Java driver core (provides DriverOption)
+DS_VER="4.17.0"
+download "https://repo1.maven.org/maven2/com/datastax/oss/java-driver-core/$${DS_VER}/java-driver-core-$${DS_VER}.jar" \
+         "$${JDBC_DIR}/java-driver-core-$${DS_VER}.jar"
+
+# 4) DataStax shaded guava (note: different versioning)
+GUAVA_SHADED_VER="25.1-jre"
+download "https://repo1.maven.org/maven2/com/datastax/oss/java-driver-shaded-guava/$${GUAVA_SHADED_VER}/java-driver-shaded-guava-$${GUAVA_SHADED_VER}.jar" \
+         "$${JDBC_DIR}/java-driver-shaded-guava-$${GUAVA_SHADED_VER}.jar"
+
+# 5) Typesafe config
+CONF_VER="1.4.3"
+download "https://repo1.maven.org/maven2/com/typesafe/config/$${CONF_VER}/config-$${CONF_VER}.jar" \
+         "$${JDBC_DIR}/config-$${CONF_VER}.jar"
+
+# 6) Native protocol (note: different versioning than driver core)
+NP_VER="1.5.1"
+download "https://repo1.maven.org/maven2/com/datastax/oss/native-protocol/$${NP_VER}/native-protocol-$${NP_VER}.jar" \
+         "$${JDBC_DIR}/native-protocol-$${NP_VER}.jar"
+
+# 7) Jackson (needed by driver/wrapper in NiFi DBCP classloader)
+JACKSON_VER="2.17.2"
+download "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/$${JACKSON_VER}/jackson-core-$${JACKSON_VER}.jar" \
+         "$${JDBC_DIR}/jackson-core-$${JACKSON_VER}.jar"
+download "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/$${JACKSON_VER}/jackson-databind-$${JACKSON_VER}.jar" \
+         "$${JDBC_DIR}/jackson-databind-$${JACKSON_VER}.jar"
+download "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/$${JACKSON_VER}/jackson-annotations-$${JACKSON_VER}.jar" \
+         "$${JDBC_DIR}/jackson-annotations-$${JACKSON_VER}.jar"
+
+# 8) Semver4J providing org.semver4j.Semver (avoid com.vdurmont confusion)
+ORG_SEMVER_VER="6.0.0"
+download "https://repo1.maven.org/maven2/org/semver4j/semver4j/$${ORG_SEMVER_VER}/semver4j-$${ORG_SEMVER_VER}.jar" \
+         "$${JDBC_DIR}/org-semver4j-$${ORG_SEMVER_VER}.jar"
+
+# 9) Netty modules (more reliable than netty-all for classloading)
+NETTY_VER="4.1.108.Final"
+for a in netty-common netty-buffer netty-transport netty-handler netty-codec netty-resolver netty-transport-native-unix-common; do
+  download "https://repo1.maven.org/maven2/io/netty/$${a}/$${NETTY_VER}/$${a}-$${NETTY_VER}.jar" \
+           "$${JDBC_DIR}/$${a}-$${NETTY_VER}.jar"
+done
+
+chmod 644 "$${JDBC_DIR}"/*.jar || true
+echo "JDBC dir contents:"
+ls -lh "$${JDBC_DIR}"
+
+docker pull "$${NIFI_IMAGE}"
 docker rm -f "$${NIFI_NAME}" || true
 
-# Run NiFi (HTTPS 8443)
 docker run -d --name "$${NIFI_NAME}" --restart unless-stopped \
   -p 8443:8443 \
   -e SINGLE_USER_CREDENTIALS_USERNAME="$${NIFI_USER}" \
   -e SINGLE_USER_CREDENTIALS_PASSWORD="$${NIFI_PASS}" \
   -e NIFI_WEB_HTTPS_HOST="0.0.0.0" \
   -e NIFI_WEB_PROXY_HOST="$${PUBLIC_IP}:8443" \
+  -v /opt/nifi/jdbc:/opt/nifi/jdbc:ro \
   -v /opt/nifi/db:/opt/nifi/nifi-current/database_repository \
   -v /opt/nifi/flowfile_repo:/opt/nifi/nifi-current/flowfile_repository \
   -v /opt/nifi/content_repo:/opt/nifi/nifi-current/content_repository \
@@ -327,35 +402,21 @@ docker run -d --name "$${NIFI_NAME}" --restart unless-stopped \
   -v /opt/nifi/logs:/opt/nifi/nifi-current/logs \
   "$${NIFI_IMAGE}"
 
-# Quick check
-sleep 8
+sleep 10
 docker ps | grep -q "$${NIFI_NAME}"
 echo "NiFi should be available at: https://$${PUBLIC_IP}:8443/nifi"
 EOT
+
 
   service_account {
     email  = google_service_account.nifi_sa.email
     scopes = ["https://www.googleapis.com/auth/cloud-platform"]
   }
 
-
-
-
+  depends_on = [
+    google_storage_bucket_iam_member.nifi_landing_prefix_access
+  ]
 }
-# NiFi can access only landing/{raw,processed,failed}/
-resource "google_storage_bucket_iam_member" "nifi_landing_prefix_access" {
-  bucket = google_storage_bucket.landing_bucket.name
-  role   = "roles/storage.objectAdmin"
-  member = "serviceAccount:${google_service_account.nifi_sa.email}"
-
-  condition {
-    title       = "nifi-landing-prefixes"
-    description = "Allow NiFi only landing/raw, landing/processed, landing/failed"
-    expression  = "resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/raw/\") || resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/processed/\") || resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/failed/\")"
-  }
-}
-
-
 
 output "nifi_public_ip" {
   value = google_compute_instance.nifi.network_interface[0].access_config[0].nat_ip

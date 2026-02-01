@@ -1,0 +1,27 @@
+cat /var/log/syslog | grep startup
+
+Terraform plan
+Terraform apply
+cqlsh 34.88.39.95 9042
+nodetool status
+sudo docker exec -it 48b6df722bd4 nodetool status
+cqlsh -e "SELECT peer, rpc_address FROM system.peers;"
+
+terraform output -raw nifi_public_ip
+
+# test each cassandra node (replace IPs with yours)
+nc -vz 10.0.0.10 9042
+nc -vz 10.0.0.11 9042
+nc -vz 10.0.0.12 9042
+
+https://34.88.120.214:8443/nifi/#/process-groups/10240ff8-019c-1000-d00b-3c2455c5650c
+
+terraform output -raw landing_bucket_name
+
+gsutil ls -a gs://mysimbdp-landing-485818/
+
+#to move the file
+gcloud storage cp Data/listings-Albany-112025.csv gs://mysimbdp-landing-485818/landing/raw 
+
+#to chekc the file
+gcloud storage ls gs://mysimbdp-landing-485818/landing/raw 
