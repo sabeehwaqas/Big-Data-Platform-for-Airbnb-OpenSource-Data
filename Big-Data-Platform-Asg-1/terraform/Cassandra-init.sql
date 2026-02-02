@@ -1,33 +1,30 @@
 sudo docker exec -it cassandra-node-1 cqlsh
 
-CREATE KEYSPACE IF NOT EXISTS energy_weather
+CREATE KEYSPACE IF NOT EXISTS test
 WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
 
-USE energy_weather;
+USE amazon;
 
-CREATE TABLE IF NOT EXISTS bronze (
-  city text,
-  zip text,
-  ts timestamp,
-  egridregion text,
-  temperaturef int,
-  humidity int,
-  data_availability_weather int,
-  wetbulbtemperaturef double,
-  coal bigint,
-  hydro bigint,
-  naturalgas bigint,
-  nuclear bigint,
-  other bigint,
-  petroleum bigint,
-  solar bigint,
-  wind bigint,
-  data_availability_energy int,
-  onsitewuefixedapproach double,
-  onsitewuefixedcoldwater double,
-  offsitewue double,
-  PRIMARY KEY ((city, zip), ts)
-) WITH CLUSTERING ORDER BY (ts ASC);
+DROP TABLE IF EXISTS amazon;
+CREATE TABLE IF NOT EXISTS amazon.reviews_by_product (
+    marketplace text,
+    product_id text,
+    review_date date,
+    review_id text,
+    customer_id bigint,
+    product_parent bigint,
+    product_title text,
+    product_category text,
+    star_rating int,
+    helpful_votes int,
+    total_votes int,
+    vine text,
+    verified_purchase text,
+    review_headline text,
+    review_body text,
+    PRIMARY KEY ((marketplace, product_id), review_date, review_id)
+) WITH CLUSTERING ORDER BY (review_date DESC, review_id ASC);
+
 
 
 USE energy_weather;

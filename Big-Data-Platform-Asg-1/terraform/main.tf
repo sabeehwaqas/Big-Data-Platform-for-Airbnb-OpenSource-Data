@@ -44,6 +44,12 @@ resource "google_storage_bucket_object" "landing_raw_dir" {
   content = " "
 }
 
+resource "google_storage_bucket_object" "landing_raw_dir" {
+  bucket  = google_storage_bucket.landing_bucket.name
+  name    = "landing/source/"
+  content = " "
+}
+
 resource "google_storage_bucket_object" "landing_processed_dir" {
   bucket  = google_storage_bucket.landing_bucket.name
   name    = "landing/processed/"
@@ -83,9 +89,10 @@ resource "google_storage_bucket_iam_member" "nifi_landing_prefix_access" {
 
   condition {
     title       = "nifi-landing-prefixes"
-    description = "Allow NiFi only landing/raw, landing/processed, landing/failed"
-    expression  = "resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/raw/\") || resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/processed/\") || resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/failed/\")"
+    description = "Allow NiFi only objects under landing/"
+    expression  = "resource.name.startsWith(\"projects/_/buckets/${google_storage_bucket.landing_bucket.name}/objects/landing/\")"
   }
+
 }
 # Allow NiFi service account to LIST objects in the bucket (required for ListGCSBucket)
 resource "google_storage_bucket_iam_member" "nifi_list_objects" {
