@@ -1,11 +1,11 @@
 sudo docker exec -it cassandra-node-1 cqlsh
 
-CREATE KEYSPACE IF NOT EXISTS test
+CREATE KEYSPACE IF NOT EXISTS amazon
 WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
 
 USE amazon;
 
-DROP TABLE IF EXISTS amazon;
+DROP TABLE IF EXISTS amazon.reviews_by_product;
 CREATE TABLE IF NOT EXISTS amazon.reviews_by_product (
     marketplace text,
     product_id text,
