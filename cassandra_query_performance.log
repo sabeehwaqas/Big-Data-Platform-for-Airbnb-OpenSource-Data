@@ -1,0 +1,954 @@
+2026-02-05 17:45:42,645 - ================================================================================
+2026-02-05 17:45:42,646 - Starting Cassandra performance testing with varying concurrency levels
+2026-02-05 17:45:42,646 - ================================================================================
+2026-02-05 17:45:42,848 - New Cassandra host <Host: 10.0.0.11:9042 datacenter1> discovered
+2026-02-05 17:45:42,848 - New Cassandra host <Host: 10.0.0.10:9042 datacenter1> discovered
+2026-02-05 17:45:42,848 - Cassandra host 34.88.167.211:9042 removed
+2026-02-05 17:45:42,848 - Cassandra host 34.88.93.8:9042 removed
+2026-02-05 17:45:43,164 - Starting 100 queries with concurrency level: 10
+2026-02-05 17:45:44,062 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:44,063 - Query 1 executed successfully with 24785 rows in 0.8986 seconds.
+2026-02-05 17:45:44,496 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:44,497 - Query 8 executed successfully with 24785 rows in 1.3315 seconds.
+2026-02-05 17:45:44,568 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:44,569 - Query 5 executed successfully with 24785 rows in 1.4035 seconds.
+2026-02-05 17:45:44,600 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:44,600 - Query 3 executed successfully with 24785 rows in 1.4354 seconds.
+2026-02-05 17:45:44,632 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:44,633 - Query 6 executed successfully with 24785 rows in 1.4676 seconds.
+2026-02-05 17:45:44,647 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:44,647 - Query 7 executed successfully with 24785 rows in 1.4823 seconds.
+2026-02-05 17:45:44,675 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:44,676 - Query 4 executed successfully with 24785 rows in 1.5111 seconds.
+2026-02-05 17:45:44,689 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:44,690 - Query 2 executed successfully with 24785 rows in 1.5250 seconds.
+2026-02-05 17:45:44,718 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:44,718 - Query 9 executed successfully with 24785 rows in 1.5529 seconds.
+2026-02-05 17:45:44,767 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:44,768 - Query 10 executed successfully with 24785 rows in 1.6027 seconds.
+2026-02-05 17:45:45,545 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:45,546 - Query 11 executed successfully with 24785 rows in 1.4827 seconds.
+2026-02-05 17:45:46,071 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:46,072 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:46,072 - Query 12 executed successfully with 24785 rows in 1.5748 seconds.
+2026-02-05 17:45:46,072 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:46,072 - Query 13 executed successfully with 24785 rows in 1.5035 seconds.
+2026-02-05 17:45:46,073 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:46,073 - Query 14 executed successfully with 24785 rows in 1.4726 seconds.
+2026-02-05 17:45:46,074 - Query 16 executed successfully with 24785 rows in 1.4260 seconds.
+2026-02-05 17:45:46,092 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:46,092 - Query 15 executed successfully with 24785 rows in 1.4594 seconds.
+2026-02-05 17:45:46,111 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:46,112 - Query 19 executed successfully with 24785 rows in 1.3937 seconds.
+2026-02-05 17:45:46,133 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:46,134 - Query 18 executed successfully with 24785 rows in 1.4436 seconds.
+2026-02-05 17:45:46,148 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:46,148 - Query 17 executed successfully with 24785 rows in 1.4717 seconds.
+2026-02-05 17:45:46,326 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:46,327 - Query 20 executed successfully with 24785 rows in 1.5585 seconds.
+2026-02-05 17:45:47,027 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:47,027 - Query 21 executed successfully with 24785 rows in 1.4808 seconds.
+2026-02-05 17:45:47,544 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:47,545 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:47,545 - Query 25 executed successfully with 24785 rows in 1.4714 seconds.
+2026-02-05 17:45:47,546 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:47,546 - Query 24 executed successfully with 24785 rows in 1.4722 seconds.
+2026-02-05 17:45:47,547 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:47,547 - Query 22 executed successfully with 24785 rows in 1.4744 seconds.
+2026-02-05 17:45:47,547 - Query 23 executed successfully with 24785 rows in 1.4742 seconds.
+2026-02-05 17:45:47,580 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:47,581 - Query 26 executed successfully with 24785 rows in 1.4882 seconds.
+2026-02-05 17:45:47,589 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:47,590 - Query 27 executed successfully with 24785 rows in 1.4774 seconds.
+2026-02-05 17:45:47,617 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:47,618 - Query 29 executed successfully with 24785 rows in 1.4701 seconds.
+2026-02-05 17:45:47,626 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:47,626 - Query 28 executed successfully with 24785 rows in 1.4925 seconds.
+2026-02-05 17:45:47,769 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:47,769 - Query 30 executed successfully with 24785 rows in 1.4424 seconds.
+2026-02-05 17:45:48,017 - Failed to create connection pool for new host 10.0.0.11:9042:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/cluster.py", line 3326, in run_add_or_renew_pool
+    new_pool = HostConnection(host, distance, self)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/pool.py", line 406, in __init__
+    self._connection = session.cluster.connection_factory(host.endpoint, on_orphaned_stream_released=self.on_orphaned_stream_released)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/cluster.py", line 1670, in connection_factory
+    return self.connection_class.factory(endpoint, self.connect_timeout, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/connection.py", line 857, in factory
+    conn = cls(endpoint, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/io/libevreactor.py", line 267, in __init__
+    self._connect_socket()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/connection.py", line 962, in _connect_socket
+    raise socket.error(sockerr.errno, "Tried connecting to %s. Last error: %s" %
+OSError: [Errno None] Tried connecting to [('10.0.0.11', 9042)]. Last error: timed out
+2026-02-05 17:45:48,023 - Host 10.0.0.11:9042 has been marked down
+2026-02-05 17:45:48,166 - Failed to create connection pool for new host 10.0.0.10:9042:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/cluster.py", line 3326, in run_add_or_renew_pool
+    new_pool = HostConnection(host, distance, self)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/pool.py", line 406, in __init__
+    self._connection = session.cluster.connection_factory(host.endpoint, on_orphaned_stream_released=self.on_orphaned_stream_released)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/cluster.py", line 1670, in connection_factory
+    return self.connection_class.factory(endpoint, self.connect_timeout, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/connection.py", line 857, in factory
+    conn = cls(endpoint, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/io/libevreactor.py", line 267, in __init__
+    self._connect_socket()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/cassandra/connection.py", line 962, in _connect_socket
+    raise socket.error(sockerr.errno, "Tried connecting to %s. Last error: %s" %
+OSError: [Errno None] Tried connecting to [('10.0.0.10', 9042)]. Last error: timed out
+2026-02-05 17:45:48,168 - Host 10.0.0.10:9042 has been marked down
+2026-02-05 17:45:48,424 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:48,425 - Query 31 executed successfully with 24785 rows in 1.3978 seconds.
+2026-02-05 17:45:48,986 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:48,987 - Query 36 executed successfully with 24785 rows in 1.4065 seconds.
+2026-02-05 17:45:48,992 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:48,993 - Query 35 executed successfully with 24785 rows in 1.4452 seconds.
+2026-02-05 17:45:49,004 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:49,004 - Query 33 executed successfully with 24785 rows in 1.4575 seconds.
+2026-02-05 17:45:49,034 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:49,035 - Query 34 executed successfully with 24785 rows in 1.4874 seconds.
+2026-02-05 17:45:49,075 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:49,076 - Query 32 executed successfully with 24785 rows in 1.5298 seconds.
+2026-02-05 17:45:49,087 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:49,087 - Query 37 executed successfully with 24785 rows in 1.4972 seconds.
+2026-02-05 17:45:49,141 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:49,142 - Query 38 executed successfully with 24785 rows in 1.5238 seconds.
+2026-02-05 17:45:49,221 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:49,221 - Query 39 executed successfully with 24785 rows in 1.5951 seconds.
+2026-02-05 17:45:49,281 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:49,282 - Query 40 executed successfully with 24785 rows in 1.5121 seconds.
+2026-02-05 17:45:50,025 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:50,026 - Query 41 executed successfully with 24785 rows in 1.6003 seconds.
+2026-02-05 17:45:50,282 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:50,282 - Query 45 executed successfully with 24785 rows in 1.2473 seconds.
+2026-02-05 17:45:50,382 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:50,383 - Query 42 executed successfully with 24785 rows in 1.3958 seconds.
+2026-02-05 17:45:50,468 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:50,469 - Query 46 executed successfully with 24785 rows in 1.3924 seconds.
+2026-02-05 17:45:50,534 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:50,534 - Query 44 executed successfully with 24785 rows in 1.5298 seconds.
+2026-02-05 17:45:50,565 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:50,566 - Query 47 executed successfully with 24785 rows in 1.4785 seconds.
+2026-02-05 17:45:50,571 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:50,571 - Query 43 executed successfully with 24785 rows in 1.5780 seconds.
+2026-02-05 17:45:50,717 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:50,718 - Query 48 executed successfully with 24785 rows in 1.5755 seconds.
+2026-02-05 17:45:50,814 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:50,815 - Query 50 executed successfully with 24785 rows in 1.5333 seconds.
+2026-02-05 17:45:50,820 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:50,820 - Query 49 executed successfully with 24785 rows in 1.5984 seconds.
+2026-02-05 17:45:51,496 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:51,497 - Query 51 executed successfully with 24785 rows in 1.4715 seconds.
+2026-02-05 17:45:51,809 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:51,809 - Query 52 executed successfully with 24785 rows in 1.5268 seconds.
+2026-02-05 17:45:51,936 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:51,936 - Query 53 executed successfully with 24785 rows in 1.5531 seconds.
+2026-02-05 17:45:51,961 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:51,961 - Query 54 executed successfully with 24785 rows in 1.4926 seconds.
+2026-02-05 17:45:51,986 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:51,987 - Query 56 executed successfully with 24785 rows in 1.4213 seconds.
+2026-02-05 17:45:52,015 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:52,016 - Query 55 executed successfully with 24785 rows in 1.4813 seconds.
+2026-02-05 17:45:52,185 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:52,186 - Query 57 executed successfully with 24785 rows in 1.6150 seconds.
+2026-02-05 17:45:52,208 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:52,209 - Query 59 executed successfully with 24785 rows in 1.3935 seconds.
+2026-02-05 17:45:52,226 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:52,226 - Query 58 executed successfully with 24785 rows in 1.5081 seconds.
+2026-02-05 17:45:52,354 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:52,355 - Query 60 executed successfully with 24785 rows in 1.5346 seconds.
+2026-02-05 17:45:53,097 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:53,097 - Query 61 executed successfully with 24785 rows in 1.6001 seconds.
+2026-02-05 17:45:53,246 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:53,247 - Query 62 executed successfully with 24785 rows in 1.4372 seconds.
+2026-02-05 17:45:53,427 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:53,427 - Query 65 executed successfully with 24785 rows in 1.4402 seconds.
+2026-02-05 17:45:53,430 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:53,430 - Query 63 executed successfully with 24785 rows in 1.4936 seconds.
+2026-02-05 17:45:53,451 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:53,452 - Query 64 executed successfully with 24785 rows in 1.4906 seconds.
+2026-02-05 17:45:53,521 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:53,522 - Query 66 executed successfully with 24785 rows in 1.5056 seconds.
+2026-02-05 17:45:53,663 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:53,664 - Query 67 executed successfully with 24785 rows in 1.4777 seconds.
+2026-02-05 17:45:53,772 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:53,773 - Query 69 executed successfully with 24785 rows in 1.5462 seconds.
+2026-02-05 17:45:53,781 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:53,781 - Query 68 executed successfully with 24785 rows in 1.5726 seconds.
+2026-02-05 17:45:53,908 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:53,909 - Query 70 executed successfully with 24785 rows in 1.5541 seconds.
+2026-02-05 17:45:54,178 - Error attempting to reconnect to 10.0.0.11:9042, scheduling retry in 1.92 seconds: [Errno None] Tried connecting to [('10.0.0.11', 9042)]. Last error: timed out
+2026-02-05 17:45:54,179 - Error attempting to reconnect to 10.0.0.10:9042, scheduling retry in 2.02 seconds: [Errno None] Tried connecting to [('10.0.0.10', 9042)]. Last error: timed out
+2026-02-05 17:45:54,552 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:54,553 - Query 71 executed successfully with 24785 rows in 1.4556 seconds.
+2026-02-05 17:45:54,792 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:54,792 - Query 72 executed successfully with 24785 rows in 1.5452 seconds.
+2026-02-05 17:45:54,898 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:54,899 - Query 73 executed successfully with 24785 rows in 1.4714 seconds.
+2026-02-05 17:45:54,923 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:54,924 - Query 74 executed successfully with 24785 rows in 1.4932 seconds.
+2026-02-05 17:45:54,973 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:54,974 - Query 75 executed successfully with 24785 rows in 1.5219 seconds.
+2026-02-05 17:45:55,023 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:55,024 - Query 76 executed successfully with 24785 rows in 1.5018 seconds.
+2026-02-05 17:45:55,159 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:55,160 - Query 77 executed successfully with 24785 rows in 1.4954 seconds.
+2026-02-05 17:45:55,216 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:55,216 - Query 78 executed successfully with 24785 rows in 1.4436 seconds.
+2026-02-05 17:45:55,309 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:55,310 - Query 79 executed successfully with 24785 rows in 1.5286 seconds.
+2026-02-05 17:45:55,466 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:55,466 - Query 80 executed successfully with 24785 rows in 1.5570 seconds.
+2026-02-05 17:45:55,983 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:55,984 - Query 81 executed successfully with 24785 rows in 1.4304 seconds.
+2026-02-05 17:45:56,261 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:56,262 - Query 82 executed successfully with 24785 rows in 1.4690 seconds.
+2026-02-05 17:45:56,410 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:56,410 - Query 83 executed successfully with 24785 rows in 1.5109 seconds.
+2026-02-05 17:45:56,418 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:56,418 - Query 85 executed successfully with 24785 rows in 1.4438 seconds.
+2026-02-05 17:45:56,433 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:56,433 - Query 86 executed successfully with 24785 rows in 1.4091 seconds.
+2026-02-05 17:45:56,468 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:56,469 - Query 84 executed successfully with 24785 rows in 1.5452 seconds.
+2026-02-05 17:45:56,611 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:56,611 - Query 87 executed successfully with 24785 rows in 1.4510 seconds.
+2026-02-05 17:45:56,664 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:56,664 - Query 88 executed successfully with 24785 rows in 1.4478 seconds.
+2026-02-05 17:45:56,761 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:56,761 - Query 89 executed successfully with 24785 rows in 1.4508 seconds.
+2026-02-05 17:45:56,952 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:56,952 - Query 90 executed successfully with 24785 rows in 1.4856 seconds.
+2026-02-05 17:45:57,282 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:57,283 - Query 91 executed successfully with 24785 rows in 1.2989 seconds.
+2026-02-05 17:45:57,616 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:57,617 - Query 93 executed successfully with 24785 rows in 1.2071 seconds.
+2026-02-05 17:45:57,705 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:57,706 - Query 94 executed successfully with 24785 rows in 1.2881 seconds.
+2026-02-05 17:45:57,754 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:57,755 - Query 92 executed successfully with 24785 rows in 1.4932 seconds.
+2026-02-05 17:45:57,841 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:57,842 - Query 96 executed successfully with 24785 rows in 1.3727 seconds.
+2026-02-05 17:45:57,847 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:57,847 - Query 95 executed successfully with 24785 rows in 1.4140 seconds.
+2026-02-05 17:45:57,885 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:57,886 - Query 98 executed successfully with 24785 rows in 1.2215 seconds.
+2026-02-05 17:45:57,902 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:57,903 - Query 97 executed successfully with 24785 rows in 1.2917 seconds.
+2026-02-05 17:45:57,931 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:57,931 - Query 99 executed successfully with 24785 rows in 1.1701 seconds.
+2026-02-05 17:45:57,949 - Server warning: Aggregation query used without partition key
+2026-02-05 17:45:57,949 - Query 100 executed successfully with 24785 rows in 0.9969 seconds.
+2026-02-05 17:45:57,950 - Completed 100 queries with concurrency level 10 in 14.7859 seconds.
+2026-02-05 17:45:57,951 - METRICS - Concurrency: 10, Success Rate: 100.00%, Avg Response Time: 1.4605s, Throughput: 6.76 q/s, Error Rate: 0.00%
+2026-02-05 17:45:59,957 - Starting 100 queries with concurrency level: 50
+2026-02-05 17:46:01,162 - Error attempting to reconnect to 10.0.0.11:9042, scheduling retry in 3.64 seconds: [Errno None] Tried connecting to [('10.0.0.11', 9042)]. Last error: timed out
+2026-02-05 17:46:01,265 - Error attempting to reconnect to 10.0.0.10:9042, scheduling retry in 3.92 seconds: [Errno None] Tried connecting to [('10.0.0.10', 9042)]. Last error: timed out
+2026-02-05 17:46:03,846 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:03,847 - Query 17 executed successfully with 24785 rows in 3.8856 seconds.
+2026-02-05 17:46:04,463 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,464 - Query 15 executed successfully with 24785 rows in 4.5027 seconds.
+2026-02-05 17:46:04,673 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,674 - Query 13 executed successfully with 24785 rows in 4.7136 seconds.
+2026-02-05 17:46:04,694 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,695 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,695 - Query 44 executed successfully with 24785 rows in 4.7299 seconds.
+2026-02-05 17:46:04,695 - Query 7 executed successfully with 24785 rows in 4.7357 seconds.
+2026-02-05 17:46:04,713 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,714 - Query 20 executed successfully with 24785 rows in 4.7523 seconds.
+2026-02-05 17:46:04,719 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,719 - Query 6 executed successfully with 24785 rows in 4.7600 seconds.
+2026-02-05 17:46:04,749 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,750 - Query 21 executed successfully with 24785 rows in 4.7883 seconds.
+2026-02-05 17:46:04,755 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,756 - Query 5 executed successfully with 24785 rows in 4.7971 seconds.
+2026-02-05 17:46:04,871 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,872 - Query 12 executed successfully with 24785 rows in 4.9117 seconds.
+2026-02-05 17:46:04,889 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,889 - Query 36 executed successfully with 24785 rows in 4.9255 seconds.
+2026-02-05 17:46:04,920 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,921 - Query 19 executed successfully with 24785 rows in 4.9594 seconds.
+2026-02-05 17:46:04,947 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,948 - Query 24 executed successfully with 24785 rows in 4.9856 seconds.
+2026-02-05 17:46:04,954 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,954 - Query 35 executed successfully with 24785 rows in 4.9909 seconds.
+2026-02-05 17:46:04,959 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,959 - Query 27 executed successfully with 24785 rows in 4.9967 seconds.
+2026-02-05 17:46:04,988 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,989 - Query 30 executed successfully with 24785 rows in 5.0260 seconds.
+2026-02-05 17:46:04,996 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:04,996 - Query 11 executed successfully with 24785 rows in 5.0362 seconds.
+2026-02-05 17:46:05,049 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,050 - Query 40 executed successfully with 24785 rows in 5.0856 seconds.
+2026-02-05 17:46:05,104 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,104 - Query 45 executed successfully with 24785 rows in 5.1394 seconds.
+2026-02-05 17:46:05,162 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,162 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,163 - Query 29 executed successfully with 24785 rows in 5.1997 seconds.
+2026-02-05 17:46:05,163 - Query 48 executed successfully with 24785 rows in 5.1976 seconds.
+2026-02-05 17:46:05,183 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,184 - Query 32 executed successfully with 24785 rows in 5.2207 seconds.
+2026-02-05 17:46:05,194 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,194 - Query 18 executed successfully with 24785 rows in 5.2329 seconds.
+2026-02-05 17:46:05,208 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,209 - Query 10 executed successfully with 24785 rows in 5.2489 seconds.
+2026-02-05 17:46:05,247 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,248 - Query 50 executed successfully with 24785 rows in 5.2825 seconds.
+2026-02-05 17:46:05,264 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,265 - Query 33 executed successfully with 24785 rows in 5.3017 seconds.
+2026-02-05 17:46:05,273 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,273 - Query 3 executed successfully with 24785 rows in 5.3149 seconds.
+2026-02-05 17:46:05,309 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,310 - Query 38 executed successfully with 24785 rows in 5.3460 seconds.
+2026-02-05 17:46:05,340 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,341 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,341 - Query 28 executed successfully with 24785 rows in 5.3782 seconds.
+2026-02-05 17:46:05,341 - Query 16 executed successfully with 24785 rows in 5.3802 seconds.
+2026-02-05 17:46:05,357 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,357 - Query 14 executed successfully with 24785 rows in 5.3963 seconds.
+2026-02-05 17:46:05,377 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,378 - Query 2 executed successfully with 24785 rows in 5.4200 seconds.
+2026-02-05 17:46:05,382 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,382 - Query 22 executed successfully with 24785 rows in 5.4202 seconds.
+2026-02-05 17:46:05,501 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,502 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,502 - Query 26 executed successfully with 24785 rows in 5.5395 seconds.
+2026-02-05 17:46:05,502 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,502 - Query 37 executed successfully with 24785 rows in 5.5385 seconds.
+2026-02-05 17:46:05,503 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,503 - Query 41 executed successfully with 24785 rows in 5.5388 seconds.
+2026-02-05 17:46:05,504 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,504 - Query 34 executed successfully with 24785 rows in 5.5405 seconds.
+2026-02-05 17:46:05,504 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,504 - Query 47 executed successfully with 24785 rows in 5.5393 seconds.
+2026-02-05 17:46:05,505 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,505 - Query 1 executed successfully with 24785 rows in 5.5474 seconds.
+2026-02-05 17:46:05,505 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,505 - Query 43 executed successfully with 24785 rows in 5.5405 seconds.
+2026-02-05 17:46:05,505 - Query 31 executed successfully with 24785 rows in 5.5424 seconds.
+2026-02-05 17:46:05,521 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,522 - Query 8 executed successfully with 24785 rows in 5.5623 seconds.
+2026-02-05 17:46:05,569 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,570 - Query 9 executed successfully with 24785 rows in 5.6103 seconds.
+2026-02-05 17:46:05,577 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,578 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,578 - Query 49 executed successfully with 24785 rows in 5.6124 seconds.
+2026-02-05 17:46:05,578 - Query 4 executed successfully with 24785 rows in 5.6195 seconds.
+2026-02-05 17:46:05,616 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,616 - Query 23 executed successfully with 24785 rows in 5.6542 seconds.
+2026-02-05 17:46:05,658 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,658 - Query 25 executed successfully with 24785 rows in 5.6960 seconds.
+2026-02-05 17:46:05,828 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,829 - Query 39 executed successfully with 24785 rows in 5.8648 seconds.
+2026-02-05 17:46:05,835 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:05,836 - Query 46 executed successfully with 24785 rows in 5.8710 seconds.
+2026-02-05 17:46:06,245 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:06,245 - Query 42 executed successfully with 24785 rows in 6.2808 seconds.
+2026-02-05 17:46:07,540 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:07,541 - Query 51 executed successfully with 24785 rows in 3.6941 seconds.
+2026-02-05 17:46:08,037 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,038 - Query 64 executed successfully with 24785 rows in 3.0835 seconds.
+2026-02-05 17:46:08,119 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,120 - Query 76 executed successfully with 24785 rows in 2.8546 seconds.
+2026-02-05 17:46:08,418 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,419 - Query 55 executed successfully with 24785 rows in 3.7234 seconds.
+2026-02-05 17:46:08,490 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,491 - Query 52 executed successfully with 24785 rows in 4.0271 seconds.
+2026-02-05 17:46:08,556 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,557 - Query 70 executed successfully with 24785 rows in 3.3943 seconds.
+2026-02-05 17:46:08,599 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,600 - Query 54 executed successfully with 24785 rows in 3.9050 seconds.
+2026-02-05 17:46:08,627 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,628 - Query 59 executed successfully with 24785 rows in 3.8717 seconds.
+2026-02-05 17:46:08,798 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,799 - Query 81 executed successfully with 24785 rows in 3.4422 seconds.
+2026-02-05 17:46:08,851 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,852 - Query 74 executed successfully with 24785 rows in 3.6435 seconds.
+2026-02-05 17:46:08,858 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,858 - Query 56 executed successfully with 24785 rows in 4.1440 seconds.
+2026-02-05 17:46:08,941 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,942 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,942 - Query 65 executed successfully with 24785 rows in 3.9830 seconds.
+2026-02-05 17:46:08,943 - Query 75 executed successfully with 24785 rows in 3.6945 seconds.
+2026-02-05 17:46:08,976 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:08,977 - Query 58 executed successfully with 24785 rows in 4.2263 seconds.
+2026-02-05 17:46:09,024 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,025 - Query 83 executed successfully with 24785 rows in 3.6424 seconds.
+2026-02-05 17:46:09,032 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,033 - Query 62 executed successfully with 24785 rows in 4.1117 seconds.
+2026-02-05 17:46:09,035 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,036 - Query 82 executed successfully with 24785 rows in 3.6575 seconds.
+2026-02-05 17:46:09,139 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,140 - Query 79 executed successfully with 24785 rows in 3.7989 seconds.
+2026-02-05 17:46:09,145 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,145 - Query 66 executed successfully with 24785 rows in 4.1561 seconds.
+2026-02-05 17:46:09,154 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,154 - Query 53 executed successfully with 24785 rows in 4.4799 seconds.
+2026-02-05 17:46:09,174 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,175 - Query 71 executed successfully with 24785 rows in 4.0116 seconds.
+2026-02-05 17:46:09,175 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,176 - Query 68 executed successfully with 24785 rows in 4.1256 seconds.
+2026-02-05 17:46:09,183 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,184 - Query 57 executed successfully with 24785 rows in 4.4645 seconds.
+2026-02-05 17:46:09,209 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,209 - Query 61 executed successfully with 24785 rows in 4.3197 seconds.
+2026-02-05 17:46:09,239 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,240 - Query 67 executed successfully with 24785 rows in 4.2432 seconds.
+2026-02-05 17:46:09,268 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,269 - Query 60 executed successfully with 24785 rows in 4.3969 seconds.
+2026-02-05 17:46:09,273 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,273 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,273 - Query 77 executed successfully with 24785 rows in 3.9997 seconds.
+2026-02-05 17:46:09,273 - Query 80 executed successfully with 24785 rows in 3.9314 seconds.
+2026-02-05 17:46:09,280 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,280 - Query 72 executed successfully with 24785 rows in 4.0964 seconds.
+2026-02-05 17:46:09,326 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,327 - Query 69 executed successfully with 24785 rows in 4.2222 seconds.
+2026-02-05 17:46:09,331 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,331 - Query 73 executed successfully with 24785 rows in 4.1372 seconds.
+2026-02-05 17:46:09,336 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,336 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,336 - Query 86 executed successfully with 24785 rows in 3.8325 seconds.
+2026-02-05 17:46:09,337 - Query 78 executed successfully with 24785 rows in 4.0266 seconds.
+2026-02-05 17:46:09,346 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,347 - Query 84 executed successfully with 24785 rows in 3.8440 seconds.
+2026-02-05 17:46:09,369 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,372 - Query 87 executed successfully with 24785 rows in 3.8676 seconds.
+2026-02-05 17:46:09,405 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,405 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,406 - Query 88 executed successfully with 24785 rows in 3.9006 seconds.
+2026-02-05 17:46:09,406 - Query 63 executed successfully with 24785 rows in 4.4581 seconds.
+2026-02-05 17:46:09,554 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,555 - Query 89 executed successfully with 24785 rows in 4.0496 seconds.
+2026-02-05 17:46:09,622 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,623 - Query 97 executed successfully with 24785 rows in 3.9641 seconds.
+2026-02-05 17:46:09,640 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,641 - Query 91 executed successfully with 24785 rows in 4.1350 seconds.
+2026-02-05 17:46:09,659 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,659 - Query 95 executed successfully with 24785 rows in 4.0807 seconds.
+2026-02-05 17:46:09,668 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,669 - Query 94 executed successfully with 24785 rows in 4.0905 seconds.
+2026-02-05 17:46:09,679 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,679 - Query 85 executed successfully with 24785 rows in 4.1756 seconds.
+2026-02-05 17:46:09,696 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,696 - Query 90 executed successfully with 24785 rows in 4.1905 seconds.
+2026-02-05 17:46:09,699 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,699 - Query 93 executed successfully with 24785 rows in 4.1290 seconds.
+2026-02-05 17:46:09,712 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,712 - Query 96 executed successfully with 24785 rows in 4.0959 seconds.
+2026-02-05 17:46:09,732 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,733 - Query 100 executed successfully with 24785 rows in 3.4877 seconds.
+2026-02-05 17:46:09,734 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,734 - Query 99 executed successfully with 24785 rows in 3.8979 seconds.
+2026-02-05 17:46:09,756 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,756 - Query 98 executed successfully with 24785 rows in 3.9269 seconds.
+2026-02-05 17:46:09,757 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:09,757 - Query 92 executed successfully with 24785 rows in 4.2356 seconds.
+2026-02-05 17:46:09,761 - Completed 100 queries with concurrency level 50 in 9.8044 seconds.
+2026-02-05 17:46:09,762 - METRICS - Concurrency: 50, Success Rate: 100.00%, Avg Response Time: 4.6003s, Throughput: 10.20 q/s, Error Rate: 0.00%
+2026-02-05 17:46:09,813 - Error attempting to reconnect to 10.0.0.11:9042, scheduling retry in 6.8 seconds: [Errno None] Tried connecting to [('10.0.0.11', 9042)]. Last error: timed out
+2026-02-05 17:46:10,229 - Error attempting to reconnect to 10.0.0.10:9042, scheduling retry in 8.96 seconds: [Errno None] Tried connecting to [('10.0.0.10', 9042)]. Last error: timed out
+2026-02-05 17:46:11,762 - Starting 100 queries with concurrency level: 100
+2026-02-05 17:46:17,675 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:17,676 - Query 84 executed successfully with 24785 rows in 5.9050 seconds.
+2026-02-05 17:46:17,850 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:17,851 - Query 28 executed successfully with 24785 rows in 6.0857 seconds.
+2026-02-05 17:46:18,014 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:18,016 - Query 74 executed successfully with 24785 rows in 6.2459 seconds.
+2026-02-05 17:46:18,284 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:18,285 - Query 10 executed successfully with 24785 rows in 6.5209 seconds.
+2026-02-05 17:46:18,304 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:18,305 - Query 16 executed successfully with 24785 rows in 6.5405 seconds.
+2026-02-05 17:46:18,514 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:18,515 - Query 11 executed successfully with 24785 rows in 6.7511 seconds.
+2026-02-05 17:46:18,551 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:18,552 - Query 33 executed successfully with 24785 rows in 6.7859 seconds.
+2026-02-05 17:46:18,640 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:18,641 - Query 14 executed successfully with 24785 rows in 6.8761 seconds.
+2026-02-05 17:46:18,723 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:18,724 - Query 31 executed successfully with 24785 rows in 6.9583 seconds.
+2026-02-05 17:46:18,737 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:18,738 - Query 8 executed successfully with 24785 rows in 6.9739 seconds.
+2026-02-05 17:46:19,280 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:19,281 - Query 86 executed successfully with 24785 rows in 7.5103 seconds.
+2026-02-05 17:46:19,352 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:19,353 - Query 17 executed successfully with 24785 rows in 7.5883 seconds.
+2026-02-05 17:46:19,429 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:19,430 - Query 64 executed successfully with 24785 rows in 7.6610 seconds.
+2026-02-05 17:46:19,489 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:19,490 - Query 24 executed successfully with 24785 rows in 7.7248 seconds.
+2026-02-05 17:46:20,132 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,133 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,133 - Query 54 executed successfully with 24785 rows in 8.3656 seconds.
+2026-02-05 17:46:20,133 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,134 - Query 22 executed successfully with 24785 rows in 8.3687 seconds.
+2026-02-05 17:46:20,134 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,134 - Query 7 executed successfully with 24785 rows in 8.3707 seconds.
+2026-02-05 17:46:20,135 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,135 - Query 23 executed successfully with 24785 rows in 8.3699 seconds.
+2026-02-05 17:46:20,135 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,135 - Query 47 executed successfully with 24785 rows in 8.3685 seconds.
+2026-02-05 17:46:20,136 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,136 - Query 75 executed successfully with 24785 rows in 8.3659 seconds.
+2026-02-05 17:46:20,136 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,136 - Query 6 executed successfully with 24785 rows in 8.3726 seconds.
+2026-02-05 17:46:20,136 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,136 - Query 12 executed successfully with 24785 rows in 8.3723 seconds.
+2026-02-05 17:46:20,137 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,137 - Query 80 executed successfully with 24785 rows in 8.3662 seconds.
+2026-02-05 17:46:20,137 - Query 20 executed successfully with 24785 rows in 8.3722 seconds.
+2026-02-05 17:46:20,237 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,238 - Query 45 executed successfully with 24785 rows in 8.4714 seconds.
+2026-02-05 17:46:20,283 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,284 - Query 2 executed successfully with 24785 rows in 8.5211 seconds.
+2026-02-05 17:46:20,292 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,292 - Query 9 executed successfully with 24785 rows in 8.5287 seconds.
+2026-02-05 17:46:20,310 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,311 - Query 38 executed successfully with 24785 rows in 8.5447 seconds.
+2026-02-05 17:46:20,334 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,335 - Query 26 executed successfully with 24785 rows in 8.5694 seconds.
+2026-02-05 17:46:20,371 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,372 - Query 82 executed successfully with 24785 rows in 8.6014 seconds.
+2026-02-05 17:46:20,375 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,375 - Query 70 executed successfully with 24785 rows in 8.6058 seconds.
+2026-02-05 17:46:20,441 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,442 - Query 1 executed successfully with 24785 rows in 8.6792 seconds.
+2026-02-05 17:46:20,464 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,465 - Query 19 executed successfully with 24785 rows in 8.7001 seconds.
+2026-02-05 17:46:20,526 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,526 - Query 25 executed successfully with 24785 rows in 8.7613 seconds.
+2026-02-05 17:46:20,582 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,583 - Query 99 executed successfully with 24785 rows in 8.8105 seconds.
+2026-02-05 17:46:20,733 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,734 - Query 37 executed successfully with 24785 rows in 8.9678 seconds.
+2026-02-05 17:46:20,738 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,739 - Query 34 executed successfully with 24785 rows in 8.9730 seconds.
+2026-02-05 17:46:20,755 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,755 - Query 27 executed successfully with 24785 rows in 8.9900 seconds.
+2026-02-05 17:46:20,756 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,756 - Query 59 executed successfully with 24785 rows in 8.9879 seconds.
+2026-02-05 17:46:20,825 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,826 - Query 52 executed successfully with 24785 rows in 9.0585 seconds.
+2026-02-05 17:46:20,878 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,879 - Query 72 executed successfully with 24785 rows in 9.1094 seconds.
+2026-02-05 17:46:20,949 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,950 - Query 66 executed successfully with 24785 rows in 9.1811 seconds.
+2026-02-05 17:46:20,962 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,963 - Query 35 executed successfully with 24785 rows in 9.1970 seconds.
+2026-02-05 17:46:20,964 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,964 - Query 87 executed successfully with 24785 rows in 9.1933 seconds.
+2026-02-05 17:46:20,979 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,980 - Query 50 executed successfully with 24785 rows in 9.2125 seconds.
+2026-02-05 17:46:20,980 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,980 - Query 21 executed successfully with 24785 rows in 9.2153 seconds.
+2026-02-05 17:46:20,990 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,991 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:20,991 - Query 15 executed successfully with 24785 rows in 9.2263 seconds.
+2026-02-05 17:46:20,991 - Query 69 executed successfully with 24785 rows in 9.2218 seconds.
+2026-02-05 17:46:21,014 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,014 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,014 - Query 62 executed successfully with 24785 rows in 9.2457 seconds.
+2026-02-05 17:46:21,015 - Query 76 executed successfully with 24785 rows in 9.2446 seconds.
+2026-02-05 17:46:21,031 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,032 - Query 61 executed successfully with 24785 rows in 9.2634 seconds.
+2026-02-05 17:46:21,045 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,045 - Query 18 executed successfully with 24785 rows in 9.2806 seconds.
+2026-02-05 17:46:21,086 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,086 - Query 42 executed successfully with 24785 rows in 9.3197 seconds.
+2026-02-05 17:46:21,139 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,140 - Query 30 executed successfully with 24785 rows in 9.3742 seconds.
+2026-02-05 17:46:21,218 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,218 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,218 - Query 53 executed successfully with 24785 rows in 9.4509 seconds.
+2026-02-05 17:46:21,219 - Query 55 executed successfully with 24785 rows in 9.4510 seconds.
+2026-02-05 17:46:21,221 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,222 - Query 90 executed successfully with 24785 rows in 9.4501 seconds.
+2026-02-05 17:46:21,260 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,261 - Query 13 executed successfully with 24785 rows in 9.4964 seconds.
+2026-02-05 17:46:21,306 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,307 - Query 65 executed successfully with 24785 rows in 9.5380 seconds.
+2026-02-05 17:46:21,380 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,381 - Query 3 executed successfully with 24785 rows in 9.6178 seconds.
+2026-02-05 17:46:21,387 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,387 - Query 88 executed successfully with 24785 rows in 9.6158 seconds.
+2026-02-05 17:46:21,389 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,390 - Query 46 executed successfully with 24785 rows in 9.6227 seconds.
+2026-02-05 17:46:21,393 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,393 - Query 79 executed successfully with 24785 rows in 9.6232 seconds.
+2026-02-05 17:46:21,401 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,402 - Query 29 executed successfully with 24785 rows in 9.6360 seconds.
+2026-02-05 17:46:21,407 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,407 - Query 4 executed successfully with 24785 rows in 9.6439 seconds.
+2026-02-05 17:46:21,412 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,413 - Query 78 executed successfully with 24785 rows in 9.6425 seconds.
+2026-02-05 17:46:21,420 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,420 - Query 32 executed successfully with 24785 rows in 9.6546 seconds.
+2026-02-05 17:46:21,450 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,451 - Query 95 executed successfully with 24785 rows in 9.6788 seconds.
+2026-02-05 17:46:21,473 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,477 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,477 - Query 83 executed successfully with 24785 rows in 9.7063 seconds.
+2026-02-05 17:46:21,477 - Query 51 executed successfully with 24785 rows in 9.7099 seconds.
+2026-02-05 17:46:21,495 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,495 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,495 - Query 36 executed successfully with 24785 rows in 9.7292 seconds.
+2026-02-05 17:46:21,495 - Query 40 executed successfully with 24785 rows in 9.7290 seconds.
+2026-02-05 17:46:21,501 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,502 - Query 85 executed successfully with 24785 rows in 9.7307 seconds.
+2026-02-05 17:46:21,536 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,537 - Query 56 executed successfully with 24785 rows in 9.7690 seconds.
+2026-02-05 17:46:21,551 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,552 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,552 - Query 92 executed successfully with 24785 rows in 9.7802 seconds.
+2026-02-05 17:46:21,552 - Query 48 executed successfully with 24785 rows in 9.7851 seconds.
+2026-02-05 17:46:21,561 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,561 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,561 - Query 39 executed successfully with 24785 rows in 9.7949 seconds.
+2026-02-05 17:46:21,561 - Query 96 executed successfully with 24785 rows in 9.7896 seconds.
+2026-02-05 17:46:21,565 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,566 - Query 91 executed successfully with 24785 rows in 9.7943 seconds.
+2026-02-05 17:46:21,590 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,591 - Query 63 executed successfully with 24785 rows in 9.8222 seconds.
+2026-02-05 17:46:21,600 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,600 - Query 49 executed successfully with 24785 rows in 9.8331 seconds.
+2026-02-05 17:46:21,666 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,667 - Query 60 executed successfully with 24785 rows in 9.8984 seconds.
+2026-02-05 17:46:21,669 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,669 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,669 - Query 44 executed successfully with 24785 rows in 9.9027 seconds.
+2026-02-05 17:46:21,670 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,670 - Query 94 executed successfully with 24785 rows in 9.8980 seconds.
+2026-02-05 17:46:21,670 - Query 68 executed successfully with 24785 rows in 9.9009 seconds.
+2026-02-05 17:46:21,685 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,686 - Query 67 executed successfully with 24785 rows in 9.9166 seconds.
+2026-02-05 17:46:21,689 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,689 - Query 93 executed successfully with 24785 rows in 9.9177 seconds.
+2026-02-05 17:46:21,694 - Error attempting to reconnect to 10.0.0.11:9042, scheduling retry in 17.28 seconds: [Errno None] Tried connecting to [('10.0.0.11', 9042)]. Last error: timed out
+2026-02-05 17:46:21,714 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,714 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,714 - Query 43 executed successfully with 24785 rows in 9.9477 seconds.
+2026-02-05 17:46:21,715 - Query 73 executed successfully with 24785 rows in 9.9450 seconds.
+2026-02-05 17:46:21,717 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,717 - Query 77 executed successfully with 24785 rows in 9.9473 seconds.
+2026-02-05 17:46:21,720 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,721 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,721 - Query 98 executed successfully with 24785 rows in 9.9488 seconds.
+2026-02-05 17:46:21,721 - Query 71 executed successfully with 24785 rows in 9.9516 seconds.
+2026-02-05 17:46:21,731 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,731 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,731 - Query 58 executed successfully with 24785 rows in 9.9633 seconds.
+2026-02-05 17:46:21,732 - Query 89 executed successfully with 24785 rows in 9.9607 seconds.
+2026-02-05 17:46:21,744 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,745 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,745 - Query 97 executed successfully with 24785 rows in 9.9727 seconds.
+2026-02-05 17:46:21,745 - Query 57 executed successfully with 24785 rows in 9.9771 seconds.
+2026-02-05 17:46:21,751 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,751 - Query 5 executed successfully with 24785 rows in 9.9880 seconds.
+2026-02-05 17:46:21,753 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,753 - Query 41 executed successfully with 24785 rows in 9.9866 seconds.
+2026-02-05 17:46:21,768 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,768 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:21,769 - Query 81 executed successfully with 24785 rows in 9.9981 seconds.
+2026-02-05 17:46:21,769 - Query 100 executed successfully with 24785 rows in 9.9967 seconds.
+2026-02-05 17:46:21,775 - Completed 100 queries with concurrency level 100 in 10.0124 seconds.
+2026-02-05 17:46:21,776 - METRICS - Concurrency: 100, Success Rate: 100.00%, Avg Response Time: 8.9899s, Throughput: 9.99 q/s, Error Rate: 0.00%
+2026-02-05 17:46:23,780 - Starting 100 queries with concurrency level: 200
+2026-02-05 17:46:24,205 - Error attempting to reconnect to 10.0.0.10:9042, scheduling retry in 16.64 seconds: [Errno None] Tried connecting to [('10.0.0.10', 9042)]. Last error: timed out
+2026-02-05 17:46:28,732 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:28,733 - Query 42 executed successfully with 24785 rows in 4.9458 seconds.
+2026-02-05 17:46:28,767 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:28,767 - Query 81 executed successfully with 24785 rows in 4.9753 seconds.
+2026-02-05 17:46:31,804 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:31,805 - Query 77 executed successfully with 24785 rows in 8.0128 seconds.
+2026-02-05 17:46:31,887 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:31,888 - Query 63 executed successfully with 24785 rows in 8.0980 seconds.
+2026-02-05 17:46:32,623 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:32,623 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:32,623 - Query 9 executed successfully with 24785 rows in 8.8407 seconds.
+2026-02-05 17:46:32,624 - Query 18 executed successfully with 24785 rows in 8.8396 seconds.
+2026-02-05 17:46:32,930 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:32,931 - Query 23 executed successfully with 24785 rows in 9.1460 seconds.
+2026-02-05 17:46:33,050 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:33,050 - Query 14 executed successfully with 24785 rows in 9.2667 seconds.
+2026-02-05 17:46:33,173 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:33,174 - Query 3 executed successfully with 24785 rows in 9.3926 seconds.
+2026-02-05 17:46:33,454 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:33,455 - Query 6 executed successfully with 24785 rows in 9.6725 seconds.
+2026-02-05 17:46:33,470 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:33,470 - Query 8 executed successfully with 24785 rows in 9.6878 seconds.
+2026-02-05 17:46:33,480 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:33,480 - Query 97 executed successfully with 24785 rows in 9.6865 seconds.
+2026-02-05 17:46:33,623 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:33,624 - Query 16 executed successfully with 24785 rows in 9.8399 seconds.
+2026-02-05 17:46:33,659 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:33,660 - Query 62 executed successfully with 24785 rows in 9.8700 seconds.
+2026-02-05 17:46:33,719 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:33,720 - Query 10 executed successfully with 24785 rows in 9.9371 seconds.
+2026-02-05 17:46:33,786 - Query 24 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,786 - Query 2 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,786 - Query 5 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,786 - Query 7 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,786 - Query 11 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,787 - Query 12 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,787 - Query 13 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,787 - Query 15 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,787 - Query 17 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,787 - Query 19 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,787 - Query 20 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,787 - Query 21 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,787 - Query 22 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,787 - Query 1 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,787 - Query 4 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 26 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 27 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 28 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 29 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 30 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 31 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 32 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 33 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 34 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 35 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 36 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 37 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 38 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 45 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 39 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 40 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 41 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 43 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 44 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 25 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 47 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 46 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,788 - Query 48 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,789 - Query 49 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,789 - Query 50 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,789 - Query 51 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,789 - Query 52 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,789 - Query 53 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,789 - Query 54 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,789 - Query 55 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,789 - Query 56 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,790 - Query 57 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,790 - Query 58 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,790 - Query 59 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,790 - Query 60 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,790 - Query 61 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,790 - Query 64 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,790 - Query 65 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,791 - Query 66 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,791 - Query 67 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,791 - Query 68 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,791 - Query 69 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,791 - Query 70 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,791 - Query 71 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 72 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 73 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 74 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 75 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 76 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 78 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 79 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 80 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 82 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 83 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 84 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 85 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 86 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 87 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,793 - Query 88 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 93 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 90 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 91 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 92 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 94 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 95 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 89 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 96 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 99 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 98 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,794 - Query 100 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:33,801 - Completed 100 queries with concurrency level 200 in 10.0211 seconds.
+2026-02-05 17:46:33,802 - METRICS - Concurrency: 200, Success Rate: 15.00%, Avg Response Time: 8.6807s, Throughput: 9.98 q/s, Error Rate: 85.00%
+2026-02-05 17:46:35,803 - Starting 100 queries with concurrency level: 500
+2026-02-05 17:46:41,648 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:41,649 - Query 57 executed successfully with 24785 rows in 5.8426 seconds.
+2026-02-05 17:46:42,557 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:42,557 - Query 66 executed successfully with 24785 rows in 6.7501 seconds.
+2026-02-05 17:46:42,583 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:42,584 - Query 55 executed successfully with 24785 rows in 6.7773 seconds.
+2026-02-05 17:46:42,881 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:42,881 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:42,882 - Query 46 executed successfully with 24785 rows in 7.0753 seconds.
+2026-02-05 17:46:42,882 - Query 82 executed successfully with 24785 rows in 7.0738 seconds.
+2026-02-05 17:46:42,906 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:42,907 - Query 15 executed successfully with 24785 rows in 7.1019 seconds.
+2026-02-05 17:46:42,951 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:42,952 - Query 95 executed successfully with 24785 rows in 7.1433 seconds.
+2026-02-05 17:46:43,176 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,177 - Query 83 executed successfully with 24785 rows in 7.3688 seconds.
+2026-02-05 17:46:43,235 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,235 - Query 78 executed successfully with 24785 rows in 7.4275 seconds.
+2026-02-05 17:46:43,414 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,415 - Query 26 executed successfully with 24785 rows in 7.6096 seconds.
+2026-02-05 17:46:43,417 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,417 - Query 64 executed successfully with 24785 rows in 7.6099 seconds.
+2026-02-05 17:46:43,461 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,461 - Query 58 executed successfully with 24785 rows in 7.6544 seconds.
+2026-02-05 17:46:43,562 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,563 - Query 7 executed successfully with 24785 rows in 7.7586 seconds.
+2026-02-05 17:46:43,618 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,618 - Query 61 executed successfully with 24785 rows in 7.8114 seconds.
+2026-02-05 17:46:43,717 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,717 - Query 2 executed successfully with 24785 rows in 7.9135 seconds.
+2026-02-05 17:46:43,744 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,744 - Query 69 executed successfully with 24785 rows in 7.9369 seconds.
+2026-02-05 17:46:43,784 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,785 - Query 17 executed successfully with 24785 rows in 7.9799 seconds.
+2026-02-05 17:46:43,866 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,867 - Query 42 executed successfully with 24785 rows in 8.0609 seconds.
+2026-02-05 17:46:43,944 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:43,945 - Query 39 executed successfully with 24785 rows in 8.1390 seconds.
+2026-02-05 17:46:43,989 - Error attempting to reconnect to 10.0.0.11:9042, scheduling retry in 32.0 seconds: [Errno None] Tried connecting to [('10.0.0.11', 9042)]. Last error: timed out
+2026-02-05 17:46:44,027 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,028 - Query 62 executed successfully with 24785 rows in 8.2208 seconds.
+2026-02-05 17:46:44,083 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,084 - Query 54 executed successfully with 24785 rows in 8.2769 seconds.
+2026-02-05 17:46:44,161 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,162 - Query 49 executed successfully with 24785 rows in 8.3559 seconds.
+2026-02-05 17:46:44,180 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,180 - Query 19 executed successfully with 24785 rows in 8.3753 seconds.
+2026-02-05 17:46:44,182 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,182 - Query 71 executed successfully with 24785 rows in 8.3746 seconds.
+2026-02-05 17:46:44,238 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,239 - Query 3 executed successfully with 24785 rows in 8.4352 seconds.
+2026-02-05 17:46:44,301 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,302 - Query 63 executed successfully with 24785 rows in 8.4944 seconds.
+2026-02-05 17:46:44,337 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,338 - Query 20 executed successfully with 24785 rows in 8.5326 seconds.
+2026-02-05 17:46:44,351 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,352 - Query 38 executed successfully with 24785 rows in 8.5459 seconds.
+2026-02-05 17:46:44,515 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,515 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,515 - Query 36 executed successfully with 24785 rows in 8.7097 seconds.
+2026-02-05 17:46:44,516 - Query 31 executed successfully with 24785 rows in 8.7103 seconds.
+2026-02-05 17:46:44,536 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,536 - Query 51 executed successfully with 24785 rows in 8.7299 seconds.
+2026-02-05 17:46:44,541 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,542 - Query 25 executed successfully with 24785 rows in 8.7364 seconds.
+2026-02-05 17:46:44,559 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,559 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,559 - Query 50 executed successfully with 24785 rows in 8.7525 seconds.
+2026-02-05 17:46:44,559 - Query 53 executed successfully with 24785 rows in 8.7527 seconds.
+2026-02-05 17:46:44,560 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,560 - Query 56 executed successfully with 24785 rows in 8.7534 seconds.
+2026-02-05 17:46:44,642 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,642 - Query 6 executed successfully with 24785 rows in 8.8383 seconds.
+2026-02-05 17:46:44,643 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,643 - Query 16 executed successfully with 24785 rows in 8.8383 seconds.
+2026-02-05 17:46:44,763 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,764 - Query 35 executed successfully with 24785 rows in 8.9579 seconds.
+2026-02-05 17:46:44,945 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,946 - Query 14 executed successfully with 24785 rows in 9.1415 seconds.
+2026-02-05 17:46:44,980 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:44,981 - Query 28 executed successfully with 24785 rows in 9.1756 seconds.
+2026-02-05 17:46:45,056 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,057 - Query 12 executed successfully with 24785 rows in 9.2527 seconds.
+2026-02-05 17:46:45,084 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,085 - Query 40 executed successfully with 24785 rows in 9.2791 seconds.
+2026-02-05 17:46:45,103 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,103 - Query 87 executed successfully with 24785 rows in 9.2949 seconds.
+2026-02-05 17:46:45,163 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,164 - Query 43 executed successfully with 24785 rows in 9.3579 seconds.
+2026-02-05 17:46:45,173 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,174 - Query 29 executed successfully with 24785 rows in 9.3685 seconds.
+2026-02-05 17:46:45,191 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,191 - Query 59 executed successfully with 24785 rows in 9.3843 seconds.
+2026-02-05 17:46:45,212 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,212 - Query 18 executed successfully with 24785 rows in 9.4074 seconds.
+2026-02-05 17:46:45,220 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,220 - Query 75 executed successfully with 24785 rows in 9.4126 seconds.
+2026-02-05 17:46:45,257 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,257 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,257 - Query 8 executed successfully with 24785 rows in 9.4531 seconds.
+2026-02-05 17:46:45,258 - Query 52 executed successfully with 24785 rows in 9.4511 seconds.
+2026-02-05 17:46:45,262 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,262 - Query 30 executed successfully with 24785 rows in 9.4566 seconds.
+2026-02-05 17:46:45,266 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,266 - Query 86 executed successfully with 24785 rows in 9.4579 seconds.
+2026-02-05 17:46:45,409 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,409 - Query 4 executed successfully with 24785 rows in 9.6053 seconds.
+2026-02-05 17:46:45,475 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,476 - Query 9 executed successfully with 24785 rows in 9.6714 seconds.
+2026-02-05 17:46:45,573 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,574 - Query 22 executed successfully with 24785 rows in 9.7684 seconds.
+2026-02-05 17:46:45,587 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,588 - Query 70 executed successfully with 24785 rows in 9.7802 seconds.
+2026-02-05 17:46:45,604 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,604 - Query 5 executed successfully with 24785 rows in 9.8004 seconds.
+2026-02-05 17:46:45,640 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,640 - Query 98 executed successfully with 24785 rows in 9.8312 seconds.
+2026-02-05 17:46:45,645 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,646 - Query 21 executed successfully with 24785 rows in 9.8408 seconds.
+2026-02-05 17:46:45,675 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,676 - Query 73 executed successfully with 24785 rows in 9.8682 seconds.
+2026-02-05 17:46:45,679 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,680 - Query 45 executed successfully with 24785 rows in 9.8735 seconds.
+2026-02-05 17:46:45,747 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,750 - Query 13 executed successfully with 24785 rows in 9.9456 seconds.
+2026-02-05 17:46:45,752 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,752 - Query 96 executed successfully with 24785 rows in 9.9433 seconds.
+2026-02-05 17:46:45,757 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,758 - Query 99 executed successfully with 24785 rows in 9.9487 seconds.
+2026-02-05 17:46:45,780 - Server warning: Aggregation query used without partition key
+2026-02-05 17:46:45,780 - Query 24 executed successfully with 24785 rows in 9.9750 seconds.
+2026-02-05 17:46:45,809 - Query 97 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 11 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 27 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 32 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 33 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 34 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 37 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 41 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 44 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 47 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 48 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 60 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 65 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 67 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 68 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 72 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 74 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 76 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 77 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 79 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 1 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 80 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 81 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 84 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 85 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 88 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 89 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 90 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 91 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 92 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 93 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 94 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,810 - Query 10 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,811 - Query 23 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,811 - Query 100 failed with error: errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042
+2026-02-05 17:46:45,819 - Completed 100 queries with concurrency level 500 in 10.0153 seconds.
+2026-02-05 17:46:45,820 - METRICS - Concurrency: 500, Success Rate: 65.00%, Avg Response Time: 8.6642s, Throughput: 9.98 q/s, Error Rate: 35.00%
+2026-02-05 17:46:45,857 - Error attempting to reconnect to 10.0.0.10:9042, scheduling retry in 27.2 seconds: [Errno None] Tried connecting to [('10.0.0.10', 9042)]. Last error: timed out
+2026-02-05 17:46:47,867 - Performance testing completed successfully
+2026-02-05 17:46:47,867 - ================================================================================

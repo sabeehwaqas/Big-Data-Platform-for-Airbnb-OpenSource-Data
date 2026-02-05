@@ -2,7 +2,7 @@ from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 
 # Cassandra node IP addresses (use the external IP addresses of your nodes)
-CASSANDRA_NODES = ['34.88.174.120']  #<----------------# Replace with actual IPs
+CASSANDRA_NODES = ['34.88.167.211']  #<----------------# Replace with actual IPs
 KEYSPACE = 'amazon'  # Your keyspace name
 
 # Connect to Cassandra and execute CQL commands

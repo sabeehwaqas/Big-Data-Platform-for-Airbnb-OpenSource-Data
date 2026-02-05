@@ -111,7 +111,7 @@ variable "instance_count" {
 }
 
 resource "google_compute_network" "default" {
-  name                    = "cassandra-network"
+  name                    = "cassandra-network-unique"
   auto_create_subnetworks = false
 }
 
@@ -441,6 +441,8 @@ EOT
     google_storage_bucket_iam_member.nifi_landing_prefix_access
   ]
 }
+
+
 
 output "nifi_public_ip" {
   value = google_compute_instance.nifi.network_interface[0].access_config[0].nat_ip

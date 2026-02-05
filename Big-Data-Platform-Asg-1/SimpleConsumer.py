@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 # Cassandra node IP address (external IP)
 #CASSANDRA_NODES = ['34.88.149.182'] # List of Cassandra node IPs (use actual IPs)
 #CASSANDRA_NODES = ['34.88.149.182', '34.88.32.103']
-CASSANDRA_NODES = ['34.88.149.182', '34.88.32.103', '34.88.174.120']
+CASSANDRA_NODES = ['34.88.167.211', '34.88.93.8', '34.88.126.103']
 KEYSPACE = 'amazon'  # Your keyspace
 QUERY = "SELECT count(*) FROM amazon.reviews_by_product"  # Example query to run
 

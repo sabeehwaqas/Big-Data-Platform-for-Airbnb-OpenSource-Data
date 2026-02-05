@@ -1,0 +1,115 @@
+================================================================================
+CASSANDRA QUERY PERFORMANCE SUMMARY
+================================================================================
+
+Concurrency    Success Rate   Avg Time (s)   Throughput (q/s)    Error Rate     
+--------------------------------------------------------------------------------
+10             100.00         1.4605         6.76                0.00           
+50             100.00         4.6003         10.20               0.00           
+100            100.00         8.9899         9.99                0.00           
+200            15.00          8.6807         9.98                85.00          
+500            65.00          8.6642         9.98                35.00          
+
+================================================================================
+
+
+CONCURRENCY LEVEL: 10
+--------------------------------------------------------------------------------
+Total Queries:           100
+Successful Queries:      100
+Failed Queries:          0
+Success Rate:            100.00%
+Error Rate:              0.00%
+Average Response Time:   1.4605 seconds
+Median Response Time:    1.4781 seconds
+Min Response Time:       0.8986 seconds
+Max Response Time:       1.6150 seconds
+Std Dev Response Time:   0.1120 seconds
+95th Percentile:         1.5984 seconds
+99th Percentile:         1.6150 seconds
+Throughput:              6.76 queries/second
+Total Execution Time:    14.7859 seconds
+
+================================================================================
+
+CONCURRENCY LEVEL: 50
+--------------------------------------------------------------------------------
+Total Queries:           100
+Successful Queries:      100
+Failed Queries:          0
+Success Rate:            100.00%
+Error Rate:              0.00%
+Average Response Time:   4.6003 seconds
+Median Response Time:    4.4722 seconds
+Min Response Time:       2.8546 seconds
+Max Response Time:       6.2808 seconds
+Std Dev Response Time:   0.7439 seconds
+95th Percentile:         5.6542 seconds
+99th Percentile:         6.2808 seconds
+Throughput:              10.20 queries/second
+Total Execution Time:    9.8044 seconds
+
+================================================================================
+
+CONCURRENCY LEVEL: 100
+--------------------------------------------------------------------------------
+Total Queries:           100
+Successful Queries:      100
+Failed Queries:          0
+Success Rate:            100.00%
+Error Rate:              0.00%
+Average Response Time:   8.9899 seconds
+Median Response Time:    9.2545 seconds
+Min Response Time:       5.9050 seconds
+Max Response Time:       9.9981 seconds
+Std Dev Response Time:   1.0266 seconds
+95th Percentile:         9.9771 seconds
+99th Percentile:         9.9981 seconds
+Throughput:              9.99 queries/second
+Total Execution Time:    10.0124 seconds
+
+================================================================================
+
+CONCURRENCY LEVEL: 200
+--------------------------------------------------------------------------------
+Total Queries:           100
+Successful Queries:      15
+Failed Queries:          85
+Success Rate:            15.00%
+Error Rate:              85.00%
+Average Response Time:   8.6807 seconds
+Median Response Time:    9.2667 seconds
+Min Response Time:       4.9458 seconds
+Max Response Time:       9.9371 seconds
+Std Dev Response Time:   1.6241 seconds
+95th Percentile:         9.9371 seconds
+99th Percentile:         9.9371 seconds
+Throughput:              9.98 queries/second
+Total Execution Time:    10.0211 seconds
+
+Error Breakdown:
+  - errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042: 85 occurrences
+
+================================================================================
+
+CONCURRENCY LEVEL: 500
+--------------------------------------------------------------------------------
+Total Queries:           100
+Successful Queries:      65
+Failed Queries:          35
+Success Rate:            65.00%
+Error Rate:              35.00%
+Average Response Time:   8.6642 seconds
+Median Response Time:    8.7525 seconds
+Min Response Time:       5.8426 seconds
+Max Response Time:       9.9750 seconds
+Std Dev Response Time:   0.9745 seconds
+95th Percentile:         9.9433 seconds
+99th Percentile:         9.9750 seconds
+Throughput:              9.98 queries/second
+Total Execution Time:    10.0153 seconds
+
+Error Breakdown:
+  - errors={'34.88.126.103:9042': 'Client request timeout. See Session.execute[_async](timeout)'}, last_host=34.88.126.103:9042: 35 occurrences
+
+================================================================================
