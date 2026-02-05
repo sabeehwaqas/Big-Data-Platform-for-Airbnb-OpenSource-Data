@@ -14,6 +14,13 @@ resource "google_project_service" "cloudresourcemanager_api" {
   service            = "cloudresourcemanager.googleapis.com"
   disable_on_destroy = false
 }
+#Zones
+
+variable "zones" {
+  description = "List of zones for Cassandra nodes"
+  type        = list(string)
+  default     = ["europe-north1-a", "europe-north1-b", "europe-north1-c"] # List of zones
+}
 
 # -------------------------
 # GCS landing bucket
@@ -44,11 +51,6 @@ resource "google_storage_bucket_object" "landing_raw_dir" {
   content = " "
 }
 
-resource "google_storage_bucket_object" "landing_raw_dir" {
-  bucket  = google_storage_bucket.landing_bucket.name
-  name    = "landing/source/"
-  content = " "
-}
 
 resource "google_storage_bucket_object" "landing_processed_dir" {
   bucket  = google_storage_bucket.landing_bucket.name
@@ -132,6 +134,7 @@ resource "google_compute_address" "cassandra_internal" {
   address      = "10.0.0.${10 + count.index}"
 }
 
+
 resource "google_compute_address" "nifi_internal" {
   name         = "nifi-internal"
   region       = "europe-north1"
@@ -209,6 +212,8 @@ resource "google_compute_firewall" "allow_cql_from_nifi" {
     ports    = ["9042"]
   }
 
+  source_ranges = ["0.0.0.0/0"]
+
   source_tags = ["nifi-node"]
   target_tags = ["cassandra-node"]
 }
@@ -220,7 +225,7 @@ resource "google_compute_instance" "cassandra" {
   count        = var.instance_count
   name         = "cassandra-node-${count.index + 1}"
   machine_type = "e2-medium"
-  zone         = "europe-north1-a"
+  zone         = element(var.zones, count.index % length(var.zones))
   tags         = ["cassandra-node"]
 
   boot_disk {
@@ -239,11 +244,21 @@ resource "google_compute_instance" "cassandra" {
 #!/bin/bash
 set -euxo pipefail
 
+# Update system and install dependencies
 apt-get update
-apt-get install -y docker.io
+apt-get install -y docker.io curl
 systemctl enable docker
 systemctl start docker
 
+# Increase the vm.max_map_count and RLIMIT_MEMLOCK
+echo "vm.max_map_count=1048575" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+
+# Set RLIMIT_MEMLOCK to unlimited
+echo "* soft memlock unlimited" | sudo tee -a /etc/security/limits.conf
+echo "* hard memlock unlimited" | sudo tee -a /etc/security/limits.conf
+
+# Ensure Docker is working and pull Cassandra image
 docker pull cassandra:4.0
 
 # Use Terraform-known static internal IPs (no bash command substitution)
@@ -260,11 +275,13 @@ docker run -d --name cassandra-node-${count.index + 1} --restart unless-stopped 
   -e CASSANDRA_SEEDS="$${SEEDS}" \
   cassandra:4.0
 
+# Increase the vm.max_map_count setting for all nodes to improve Cassandra performance
+sysctl -w vm.max_map_count=1048575
+
 sleep 5
 docker ps | grep -q cassandra-node-${count.index + 1}
 echo "Cassandra node ${count.index + 1} up on $${NODE_IP}"
 EOT
-
 
 }
 
